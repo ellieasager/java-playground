@@ -1,6 +1,4 @@
 package org.unicats.spellChecker;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class Main {
 

@@ -3,10 +3,7 @@ package com.unicats.bank;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.stream.Collectors;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 import java.util.List;
 import java.util.Optional;
 
@@ -62,28 +59,28 @@ public class Bank {
     return result;
   }
 
-  private void helper() {
+  // private void helper() {
 
-    Iterator<Map.Entry<String, Account>> it = accounts.entrySet().iterator();
-    while (it.hasNext()) {
-      Map.Entry<String, Account> entry = it.next();
-      String key = (String)entry.getKey();
-      Account value = (Account)entry.getValue();
-    }
-    for (Map.Entry<String, Account> a : accounts.entrySet()) {}
-    for (Account a: accounts.values()) {}
+  //   Iterator<Map.Entry<String, Account>> it = accounts.entrySet().iterator();
+  //   while (it.hasNext()) {
+  //     Map.Entry<String, Account> entry = it.next();
+  //     String key = (String)entry.getKey();
+  //     Account value = (Account)entry.getValue();
+  //   }
+  //   for (Map.Entry<String, Account> a : accounts.entrySet()) {}
+  //   for (Account a: accounts.values()) {}
 
-    Collections.sort(topWithdrawals, 
-      Comparator.comparing(Transaction::getAmount)
-      .reversed()
-      .thenComparing(Transaction::getAccountId)
-    );
+  //   Collections.sort(topWithdrawals, 
+  //     Comparator.comparing(Transaction::getAmount)
+  //     .reversed()
+  //     .thenComparing(Transaction::getAccountId)
+  //   );
 
-    List<Transaction> withdrawals = this.txns
-    .stream()
-    .filter(t -> t.txnType.equals(TransactionType.WITHDRAWAL))
-    .sorted((a, b) -> b.amount.compareTo(a.amount))
-    .collect(Collectors.toList());
-  }
+  //   List<Transaction> withdrawals = this.txns
+  //   .stream()
+  //   .filter(t -> t.txnType.equals(TransactionType.WITHDRAWAL))
+  //   .sorted((a, b) -> b.amount.compareTo(a.amount))
+  //   .collect(Collectors.toList());
+  // }
 
 }
